@@ -1,0 +1,40 @@
+1. O que são sistemas embarcados?
+
+São sistemas microprocessados que funcionam para um determinado propósito, com requisitos específicos, unindo hardware e software. Esses sistemas são normalmente embutidos em uma placa, chip ou encapsulamento. 
+
+2. O que são sistemas microprocesssados?
+
+Sistemas microprocessados são sistemas capazes de resolver problemas por possuírem instruções pré-definidas que reagem de forma previsível e configurável.  Tem uma grande importância para o funcionamento do computador. 
+
+
+3. Apresente aplicações de sistemas embarcados: 
+
+(a) Para a indústria automotiva; 
+
+Sistemas de GPS e navegação, alarmes, sistemas em tempo real como freios ABS, sistemas de multimídia de entretenimento, dispositivos de segurança como sensores de estacionamento/câmera, dentre outros.
+
+(b) Para eletrodomésticos; 
+
+Máquinas de lavar com sistema para economia seja de água quanto materiais de limpeza para a roupa, geladeiras que possuem sistemas de wi-fi para informar o cliente que o estoque de alimento está abaixo do indicado, DVD players, aparelhos de TV.
+
+(c) Para automação industrial.
+
+Para o controle, gerenciamento e segurança de máquinas de auto calibre que participam de alguma linha de produção dentro da empresa. Robôs para execução de alguma tarefa que seria incapaz ou inapropriada para a realização direta dos travalhadores, automatizando assim a linha de produção.
+
+4.Cite arquiteturas possíveis e as diferenças entre elas.
+
+Têm-se diversas arquiteturas de hardware que possuem diferenças em seu protótipo de operação, como por exemplo, microcontroladores (AVR, MSP), DSPs, SOCs. As arquiteturas RISC e CISC são as principais. A RISC visa unidade de controle mais simples, rápida e barata. Já a CISC possui unidades de controle capazes de executar tarefas complexas, como a execução fora de ordem. 
+
+
+
+5.Por que usamos o Raspberry Pi na disciplina, ao invés de outro system-on-chip?
+
+Apesar de que o Raspberry Pi 1 ser baseado em um system on a chip (SoC) não se torna viável sua utilização devido o preço da Raspberry ser mais baixo, sua plataforma ser mais intuitiva e acessível, possui uma conexão direta com os monitores, além de atender a necessidade proposta na disciplina de Sistemas Embarcados. 
+
+
+
+
+
+
+
+

@@ -1,0 +1,108 @@
+1.	Por que o Linux recebeu esse nome?
+
+O nome Linux se deve a união do nome do criador Linus Torvalds com o nome de um sistema operacional denominado Unix.
+
+2.	O que são daemons?
+
+São usuários definidos sobre demanda, daemon é um programa que executa como um processo em plano de fundo ou invés de está sob o controle direto de um usuário interativo.
+
+3. O que é o shell?
+
+O shell (concha) é o intérprete de comandos entre o usuário e o sistema operacional, funcionando dessa maneira como o intermediário entre o sistema operacional e o usuário graças às linhas de comando escrita pelo usuário.  O shell lê as linhas de comandos, interpreta, executa o comando e apresenta um resultado pelas saídas.
+
+4.	Por que é importante evitar executar o terminal como super-usuário?
+
+Quando se acessa como root (usuário raiz, super-usuário) se tem o controle total sobre o sistema, ou seja, se pode ligar/desligar, adicionar/remover usuários, alterar senhar, dentre outras funções. Tornando desse modo perigoso se acessado sem a permissão do administrador do sistema.
+
+
+5.	Qual botão do teclado completa o que o usuário escreve no terminal, de acordo com o contexto?
+
+O botão Tab.
+
+6.	Quais botões do teclado apresentam instruções escritas anteriormente?
+
+O botão que apresenta uma seta para cima e outra para baixo.
+
+7. Apresente os respectivos comandos no terminal para: 
+
+(a) Obter mais informações sobre um comando. 
+
+$ man
+
+(b) Apresentar uma lista com os arquivos dentro de uma pasta. 
+
+ls
+
+(c) Apresentar o caminho completo da pasta. 
+
+pwd
+
+(d) Trocar de pasta.
+
+cd <nome da pasta>
+
+(e) Criar uma pasta. 
+
+mkdir <nome da pasta>
+
+(f) Apagar arquivos definitivamente. 
+
+rm <nome do arquivo>
+
+(g) Apagar pastas definitivamente. 
+
+rm -r    <nome da pasta>
+
+(h) Copiar arquivos. 
+
+cp <arquivo> <pasta destino>
+
+(i) Copiar pastas. 
+
+cp -r </nome da pasta> <pasta de destino>
+
+(j) Mover arquivos. 
+
+mv <arquivo> <pasta destino>
+
+(k) Mover pastas. 
+
+mv <nome da pasta> <pasta destino>
+
+(l) Renomear pastas. 
+
+mv <nome atual> <novo nome>
+
+(m) Apresentar o conteúdo de um arquivo. 
+
+cat <nome do arquivo>
+
+(n) Apresentar o tipo de um arquivo. 
+
+file <nome do arquivo>
+
+(o) Limpar a tela do terminal.
+
+clear
+
+(p) Encontrar ocorrências de palavras-chave em um arquivo-texto. 
+
+ grep <palavra> <nome do arquivo>
+
+(q) Ordenar informações em um arquivo-texto. 
+
+ sort -<palavra> <nome do arquivo>
+
+
+(r) Substituir ocorrências de palavras-chave em um arquivo-texto. 
+
+- tr 'palavra 1' 'palavra 2' <arquivo1> <arquivo2>
+
+
+(s) Conferir se dois arquivos são iguais. 
+
+ diff <nome do primeiro arquivo> <nome do segundo arquivo>
+
+(t) Escrever algo na tela.
+
+ echo "String"
