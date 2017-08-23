@@ -119,6 +119,35 @@ int main (int argc, char*argv[])
 
 4. Crie uma função que retorna o tamanho de um arquivo, usando o seguinte protótipo: int tam_arq_texto(char *nome_arquivo); Salve esta função em um arquivo separado chamado 'bib_arqs.c'. Salve o protótipo em um arquivo chamado 'bib_arqs.h'. Compile 'bib_arqs.c' para gerar o objeto 'bib_arqs.o'.
 
+#include <stdio.h>
+#include <stdlib.h>
+
+int tam_arq_texto (char *nome_arquivo)
+{
+
+	FILE *aqvo;
+	long tamanho;
+
+	aqvo = fopen(nome_arquivo, "r");
+
+
+	if (aqvo != NULL)
+	{
+		fseek (aqvo, 0, SEEK_END);
+		tamanho = ftell(aqvo);
+
+	printf("O arquivo %s possui um tamanho de %ld bytes.\n", nome_arquivo, tamanho);
+	}
+
+	else
+	{
+		printf("Erro. Arquivo não existe.\n");
+	}
+
+	fclose(aqvo);
+
+	return tamanho;
+}
 
 
 
