@@ -81,6 +81,39 @@ $ cat Eu.txt
 $ Nome: Eu
 $ Idade: 30 anos
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+int main (int argc, char*argv[])
+{
+
+	FILE *fp;
+	char nome[150] = "Nome: ";
+	char idade[150] = "Idade: ";
+	int i=0;
+
+	fp = fopen("Eu1.txt","w");
+	if (fp == NULL)
+	{
+		printf("Erro. O arquivo não foi aberto.\n");
+		exit(1);
+	}
+
+        strcat (nome, argv[1]);
+        strcat (idade, argv[2]);
+
+        for (i=0; nome[i]; i++)
+            putc(nome[i],fp);
+            putc('\n',fp);
+
+        for (i=0; idade[i]; i++)
+            putc( idade[i],fp);
+            fclose(fp);
+
+        return 0;
+}
 
 
 
