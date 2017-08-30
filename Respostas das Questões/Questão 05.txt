@@ -1,23 +1,21 @@
-1.Considerando a biblioteca-padr„o da linguagem C, responda:
+	1.Considerando a biblioteca-padr√£o da linguagem C, responda:
 
-Arquivos s„o utilizados quando se deseja gravar os dados de um programa de forma permanente em mÌdia digital.Em linguagem C os arquivos s„o tratados como uma sequÍncia de bytes.
+Arquivos s√£o utilizados quando se deseja gravar os dados de um programa de forma permanente em m√≠dia digital.Em linguagem C os arquivos s√£o tratados como uma sequ√™ncia de bytes.
 
 
-	(a) Quais s„o as funÁıes (e seus protÛtipos) para abrir e fechar arquivos?
-
+(a) Quais s√£o as fun√ß√µes (e seus prot√≥tipos) para abrir e fechar arquivos?
 
 Para a abertura de arquivos se usa o seguinte modelo: 
 
-<ponteiro> = fopen("nome do arquivo","tipo de abertura"); //O arquivo È atribuido ao ponteiro.
+<ponteiro> = fopen("nome do arquivo","tipo de abertura"); //O arquivo √© atribuido ao ponteiro.
 
-Onde a funÁ„o fopen recebe como par‚metros o nome do arquivo que se deseja abrir e o tipo de abertura a ser realizado.   
+Onde a fun√ß√£o fopen recebe como par√¢metros o nome do arquivo que se deseja abrir e o tipo de abertura a ser realizado.   
 
 Para o fechamento de arquivos se usa o seguinte modelo:
 
 fclose<ponteiro>;
 
-Onde a funÁ„o fclose recebe o nome do ponteiro onde o arquivo foi atribuido para assim realizar o fechamento. 
-
+Onde a fun√ß√£o fclose recebe o nome do ponteiro onde o arquivo foi atribuido para assim realizar o fechamento. 
 
 File *<ponteiro>
 
@@ -25,121 +23,61 @@ File *<ponteiro>
 fclose <ponteiro>
 
 
-	(b) Quais s„o as funÁıes (e seus protÛtipos) para escrever em arquivos?
-
-
-File *<ponteiro>
-
-<ponteiro> = fopen("nome do arquivo","w")
-fclose <ponteiro>
-
-Onde 'w' È uma permiss„o de abertura para escrita (gravaÁ„o).
-
-
-	(c) Quais s„o as funÁıes (e seus protÛtipos) para ler arquivos?
-
+(b) Quais s√£o as fun√ß√µes (e seus prot√≥tipos) para escrever em arquivos?
 
 File *<ponteiro>
 
-<ponteiro> = fopen("nome do arquivo","r")
+<ponteiro> = fopen("nome do arquivo","w")  //Onde 'w' √© uma permiss√£o de abertura para escrita (grava√ß√£o).
 fclose <ponteiro>
 
+(c) Quais s√£o as fun√ß√µes (e seus prot√≥tipos) para ler arquivos?
 
-Onde 'r' È uma permiss„o de abertura somente para leitura.
+File *<ponteiro>
 
+<ponteiro> = fopen("nome do arquivo","r") //Onde 'r' √© uma permiss√£o de abertura somente para leitura.
+fclose <ponteiro>
 
-
-
-	(d) Quais s„o as funÁıes (e seus protÛtipos) para reposicionar um ponteiro para arquivo?
-
+(d) Quais s√£o as fun√ß√µes (e seus prot√≥tipos) para reposicionar um ponteiro para arquivo?
 
 fprintf(nome_do_ponteiro_para_o_arquivo, "%s",variavel_string);
 
-A funÁ„o armazena dados em um arquivo, seu funcionamento È parecido com o printf onde a principal diferenÁa È que possui um par‚metro para informar o arquivo onde os dados ser„o armazenados.
+A fun√ß√£o armazena dados em um arquivo, seu funcionamento √© parecido com o printf onde a principal diferen√ßa √© que possui um par√¢metro para informar o arquivo onde os dados ser√£o armazenados.
 
 
-	(e) Quais bibliotecas devem ser incluÌdas no cÛdigo para poder utilizar as funÁıes acima?
+(e) Quais bibliotecas devem ser inclu√≠das no c√≥digo para poder utilizar as fun√ß√µes acima?
 
-FILE est· definido na biblioteca stdio.h.
-
+FILE est√° definido na biblioteca stdio.h.
 #include <stdio.h>
 
+	2.O que √© a norma POSIX?
 
-2.O que È a norma POSIX?
+POSIX (Port√°vel entre Sistemas Operacionais) √© um conjunto de normas definidas pelo IEEE para realiza√ß√£o da escrita, leitura e cria√ß√£o de arquivos em C.Determina interfaces comuns entre sistemas operacionais.
 
+	3.Considerando a norma POSIX, responda:
 
-	POSIX (Port·vel entre Sistemas Operacionais) È um conjunto de normas definidas pelo IEEE para realizaÁ„o da escrita, leitura e criaÁ„o de arquivos em C.Determina interfaces comuns entre sistemas operacionais.
-
-
-3.Considerando a norma POSIX, responda:
-
-	
-	(a) Quais s„o as funÁıes (e seus protÛtipos) para abrir e fechar arquivos?
-
+(a) Quais s√£o as fun√ß√µes (e seus prot√≥tipos) para abrir e fechar arquivos?
 
 int fp ( posix )
 open  <abre>
 close <fecha>;
 
-
-
-	(b) Quais s„o as funÁıes (e seus protÛtipos) para escrever em arquivos?
-        
-
-
+(b) Quais s√£o as fun√ß√µes (e seus prot√≥tipos) para escrever em arquivos?
+   
 int fp ( posix )
 <ponteiro> = open("nome_arquivo.txt", O_WRONLY | O_CREAT, S_IRWXU);
 
-
-
-	(c) Quais s„o as funÁıes (e seus protÛtipos) para ler arquivos?
-
+(c) Quais s√£o as fun√ß√µes (e seus prot√≥tipos) para ler arquivos?
 
 int fp ( posix )
 <ponteiro> = open("nome_arquivo.txt", O_RDONLY | O_CREAT, S_IRWXU);
 
-
-
-	(d) Quais s„o as funÁıes (e seus protÛtipos) para reposicionar um ponteiro para arquivo?
-
+(d) Quais s√£o as fun√ß√µes (e seus prot√≥tipos) para reposicionar um ponteiro para arquivo?
 
 write;
 
-
-
-	(e) Quais bibliotecas devem ser incluÌdas no cÛdigo para poder utilizar as funÁıes acima?
+(e) Quais bibliotecas devem ser inclu√≠das no c√≥digo para poder utilizar as fun√ß√µes acima?
         
-	#include <stdio.h>
-        #include <fcntl.h>
-        #include <unistd.h>
-        #include <stdlib.h>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
