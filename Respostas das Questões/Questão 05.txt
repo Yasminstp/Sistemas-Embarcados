@@ -57,18 +57,18 @@ POSIX (Portável entre Sistemas Operacionais) é um conjunto de normas definidas
 
 (a) Quais são as funções (e seus protótipos) para abrir e fechar arquivos?
 
-int fp ( posix )
+int <ponteiro> ( posix )
 open  <abre>
 close <fecha>;
 
 (b) Quais são as funções (e seus protótipos) para escrever em arquivos?
    
-int fp ( posix )
+int <ponteiro> ( posix )
 <ponteiro> = open("nome_arquivo.txt", O_WRONLY | O_CREAT, S_IRWXU);
 
 (c) Quais são as funções (e seus protótipos) para ler arquivos?
 
-int fp ( posix )
+int <ponteiro> ( posix )
 <ponteiro> = open("nome_arquivo.txt", O_RDONLY | O_CREAT, S_IRWXU);
 
 (d) Quais são as funções (e seus protótipos) para reposicionar um ponteiro para arquivo?
