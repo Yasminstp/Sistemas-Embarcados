@@ -1,0 +1,121 @@
+
+Para todas as questões, utilize as funções da norma POSIX (open(), close(), write(), read() e lseek()). Compile os códigos com o gcc e execute-os via terminal.
+
+1.	Crie um código em C para escrever "Ola mundo!" em um arquivo chamado 'ola_mundo.txt'.
+
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+int main(int argc, char **argv[ ]){
+
+    int fp;
+    char mensagem[200] = "Ola mundo!" ;
+
+    fp = open("ola_mundo.txt", O_WRONLY | O_CREAT, S_IRWXU);
+
+    if (fp == -1){
+        printf("Erro. O arquivo não foi criado.");
+        exit(1);
+    }
+
+    //Esta chamada de sistema escreve em um descritor de arquivo.
+    //fp corresponde ao descritor do arquivo a ser escrito.
+    //&mensagem é um ponteiro para a área com os dados a serem escritos em fp.
+    //sizeof(é a quantidade máxima de bytes a ser escrita).
+
+    write(fp, &mensagem, sizeof(mensagem));
+    close(fp);
+
+    return 0;
+}
+
+2.	Crie um código em C que pergunta ao usuário seu nome e sua idade, e escreve este conteúdo em um arquivo com o seu nome e extensão '.txt'. Por exemplo, considerando que o código criado recebeu o nome de 'ola_usuario_1':
+
+$ ./ola_usuario_1
+$ Digite o seu nome: Eu
+$ Digite a sua idade: 30
+$ cat Eu.txt
+$ Nome: Eu
+$ Idade: 30 anos
+
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(int argc, char **argv[ ]){
+
+    int fp;
+
+    char nome[100];
+    char arquivo[100];
+    char mensagem[100];
+    int idade;
+
+    printf("Digite o seu nome:\n");
+    scanf("%s", &nome);
+    printf("\nDigite sua idade:\n");
+    scanf("%d", &idade);
+
+    sprintf(arquivo,"%s.txt", nome);
+    sprintf(mensagem, "Idade: %d anos\0", idade);
+
+    fp = open(arquivo, O_WRONLY | O_CREAT, S_IRWXU);
+
+    if(fp == -1){
+        printf("Erro. O arquivo não foi criado.");
+        exit(1);
+    }
+    write(fp, &mensagem, strlen(mensagem));
+    close(fp);
+
+    return 0;
+}
+
+
+
+3.	Crie um código em C que recebe o nome do usuário e sua idade como argumentos de entrada (usando as variáveis argc e *argv[]), e escreve este conteúdo em um arquivo com o seu nome e extensão '.txt'. Por 
+exemplo, considerando que o código criado recebeu o nome de 'ola_usuario_2':
+
+$ ./ola_usuario_2 Eu 30
+$ cat Eu.txt
+$ Nome: Eu
+$ Idade: 30 anos
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(int argc, const char *argv[]){
+
+    int fp;
+
+    char nome[100];
+    char idade[100];
+    char arquivo[100];
+
+
+    sprintf(arquivo, "%s.txt", argv[1]);
+
+    fp = open(arquivo, O_WRONLY | O_CREAT, S_IRWXU);
+
+    if (fp == -1) {
+        printf("Erro. O arquivo não foi criado.");
+        exit(1);
+    }
+
+    sprintf(nome, "Nome: %s \n", argv[1]);
+    sprintf(idade, "Idade: %s anos\n", argv[2]);
+
+    write(fp, &nome, strlen(nome));
+    write(fp, &idade, strlen(idade));
+    close(fp);
+
+    return 0;
+}
+
+4. Crie uma função que retorna o tamanho de um arquivo, usando o seguinte protótipo: int tam_arq_texto(char *nome_arquivo); Salve esta função em um arquivo separado chamado 'bib_arqs.c'. Salve o protótipo em um arquivo chamado 'bib_arqs.h'. Compile 'bib_arqs.c' para gerar o objeto 'bib_arqs.o'.
