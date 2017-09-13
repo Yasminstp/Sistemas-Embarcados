@@ -261,7 +261,7 @@ int main(int argc, char *argv[]){
 
     char c;
     char conteudo[250];
-    char palavra[100];
+    char palavra[20];
     int i = 0, j = 0, k, l, ocorrencia = 0; 
     
     int leitura;
