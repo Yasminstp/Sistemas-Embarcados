@@ -119,3 +119,42 @@ int main(int argc, const char *argv[]){
 }
 
 4. Crie uma função que retorna o tamanho de um arquivo, usando o seguinte protótipo: int tam_arq_texto(char *nome_arquivo); Salve esta função em um arquivo separado chamado 'bib_arqs.c'. Salve o protótipo em um arquivo chamado 'bib_arqs.h'. Compile 'bib_arqs.c' para gerar o objeto 'bib_arqs.o'.
+
+
+
+bibs_arqs.c
+
+#include <stdio.h> // printf
+#include <fcntl.h> // open
+#include <unistd.h>// close
+#include <stdlib.h>// exit
+#include <string.h> // string
+#include "bib_arqs.h"
+
+
+int tam_arq_texto(char *nome_arquivo){
+
+    int i = 0;
+    int leitura;
+    char c;
+
+
+    leitura = open(nome_arquivo, O_RDONLY | O_CREAT, S_IRWXU); //ler arquivos
+
+    if(leitura == -1){
+        printf("Erro. O arquivo não foi criado.");
+        exit(1);
+    }
+
+    while(read(leitura, &c, 1) != 0) //read -> esta chamada de sistema ler um descritor de arquivo.
+         i++;
+    
+    
+    close(leitura);
+    return i;
+}
+
+5. Crie uma função que lê o conteúdo de um arquivo-texto e o guarda em uma string, usando o seguinte protótipo: void le_arq_texto(char *nome_arquivo, char *conteúdo); Repare que o conteúdo do arquivo é armazenado no vetor conteudo[]. Ou seja, ele é passado por referência. Salve esta função no mesmo arquivo da questão 4, chamado 'bib_arqs.c'. Salve o protótipo no arquivo 'bib_arqs.h'. Compile 'bib_arqs.c' novamente para gerar o objeto 'bib_arqs.o'.
+
+
+
