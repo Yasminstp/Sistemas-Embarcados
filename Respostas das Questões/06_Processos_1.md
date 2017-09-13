@@ -1,4 +1,5 @@
 1. Como se utiliza o comando ps para:
+
 (a) Mostrar todos os processos rodando na máquina?
 
 (b) Mostrar os processos de um usuário?
