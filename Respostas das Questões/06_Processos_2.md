@@ -52,6 +52,36 @@ $ 12 13 14 15 16 17 18
 $ 19 20 21 22 23 24 25
 $ 26 27 28 29 30 31
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <string.h>
+
+int main(int argc, const char *argv[])
+{
+    int i;
+    char comando[30];
+
+    for (i =1; i < argc; i++){
+        strcpy(comando, argv[i]);
+	system(comando);
+	}
+
+       // if (!strcmp(comando, "ls") )
+       //     system("ls");
+       // if (!strcmp(comando, "pwd") )
+       //     system("pwd");
+       // if (!strcmp(comando, "echo") )
+       //     system("echo");
+       // if (!strcmp(comando, "cal") )
+       //     system("cal");
+   // }
+   // return 0;
+}
+
+result
+
 3. Crie um código em C que recebe o nome de diversos comandos pelos argumentos de entrada (argc e *argv[]), e executa cada um usando fork() e exec().
 
 4. Crie um código em C que gera três processos-filho usando o fork(), e que cada processo-filho chama a seguinte função uma vez:
