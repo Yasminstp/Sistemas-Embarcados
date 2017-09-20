@@ -76,10 +76,9 @@ int main(int argc, const char *argv[])
        // if (!strcmp(comando, "cal") )
        //     system("cal");
   	 // }
-  	 // return 0;
+   return 0;
 }
 
-result
 
 3. Crie um código em C que recebe o nome de diversos comandos pelos argumentos de entrada (argc e *argv[]), e executa cada um usando fork() e exec().
 
