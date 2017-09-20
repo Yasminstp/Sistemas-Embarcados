@@ -1,4 +1,40 @@
-1. rie um código em C para gerar três processos-filho usando o fork().
+1. Crie um código em C para gerar três processos-filho usando o fork().
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+int main(int argc, char**argv[]){
+
+	pid_t bb1, bb2, bb3;
+	printf("O endereço do pai é(ID): %d\n", (int) getpid());
+	
+	bb1 = fork();
+	if(bb1 != 0){
+	
+		printf("Esse é o pai supremo, tem o ID igual a %d\n", (int) getpid());
+		printf("O seu filho tem ID igual a %d\n", bb1);
+
+		bb2 = fork();
+	if(bb2 != 0){
+	
+		printf("Esse é o pai supremo, tem o ID igual a %d\n", (int) getpid());
+		printf("O seu filho tem ID igual a %d\n", bb2);
+		
+		bb3 = fork();
+	if(bb3 != 0){
+	
+		printf("Esse é o pai supremo, tem o ID igual a %d\n", (int) getpid());
+		printf("O seu filho tem ID igual a %d\n", bb3);	
+		
+			}
+
+		}
+	}
+	return 0;
+}
+
 
 2. Crie um código em C que recebe o nome de diversos comandos pelos argumentos de entrada (argc e *argv[]), e executa cada um sequencialmente usando system(). Por exemplo, considerando que o código criado recebeu o nome de 'serial_system', e que ele foi executado na pasta '/Sistemas_Embarcados/Code/06_Processos', que contem diversos arquivos:
 
