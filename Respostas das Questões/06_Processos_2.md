@@ -67,7 +67,6 @@ int main(int argc, const char *argv[])
         strcpy(comando, argv[i]);
 	system(comando);
 	}
-
        // if (!strcmp(comando, "ls") )
        //     system("ls");
        // if (!strcmp(comando, "pwd") )
@@ -76,8 +75,8 @@ int main(int argc, const char *argv[])
        //     system("echo");
        // if (!strcmp(comando, "cal") )
        //     system("cal");
-   // }
-   // return 0;
+  	 // }
+  	 // return 0;
 }
 
 result
