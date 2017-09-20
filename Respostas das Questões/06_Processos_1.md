@@ -15,7 +15,8 @@ $ ps -e -o pid,pcpu,pmem
 
 (d) Mostrar a quanto tempo cada processo está rodando?
 
-# ps -e -o pid,user,etime
+
+$ ps -e -o pid,user,etime
 
 2. De onde vem o nome fork()?
 
